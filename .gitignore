@@ -1,0 +1,18 @@
+# fluidgas/.gitignore
+.DS_Store
+
+# Backend specific
+backend/node_modules
+backend/dist
+backend/.env
+backend/*.log
+
+# Frontend specific (add more as you build frontend)
+frontend/node_modules
+frontend/dist
+frontend/.next # example for Next.js
+frontend/build # example for CRA
+
+# IDE specific
+.vscode/
+.idea/
