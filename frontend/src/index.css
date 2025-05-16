@@ -1,0 +1,94 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 0%;
+    --foreground: 0 0% 100%;
+
+    --card: 0 0% 4%;
+    --card-foreground: 0 0% 100%;
+
+    --popover: 0 0% 4%;
+    --popover-foreground: 0 0% 100%;
+
+    --primary: 0 0% 100%;
+    --primary-foreground: 0 0% 0%;
+
+    --secondary: 240 5% 10%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 240 5% 15%;
+    --muted-foreground: 240 5% 65%;
+
+    --accent: 274 80% 75%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 240 5% 15%;
+    --input: 240 5% 15%;
+    --ring: 240 5% 65%;
+
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer utilities {
+  .purple-glow {
+    filter: drop-shadow(0 0 0.5rem theme('colors.accent.DEFAULT'));
+  }
+  
+  .particle {
+    position: absolute;
+    background: linear-gradient(180deg, rgba(155, 135, 245, 0.2) 0%, rgba(155, 135, 245, 0) 100%);
+    border-radius: 50%;
+  }
+  
+  .node {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background-color: rgba(155, 135, 245, 0.7);
+    border-radius: 50%;
+  }
+  
+  .connection {
+    position: absolute;
+    height: 1px;
+    background: linear-gradient(90deg, rgba(155, 135, 245, 0) 0%, rgba(155, 135, 245, 0.5) 50%, rgba(155, 135, 245, 0) 100%);
+    transform-origin: left center;
+  }
+  
+  .beam {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: theme('colors.accent.DEFAULT');
+    filter: drop-shadow(0 0 5px theme('colors.accent.DEFAULT'));
+    z-index: 10;
+  }
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+}
